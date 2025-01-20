@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr = [1,2,3,4,5]
+        let sum = 0;
+        for(i=0;i<=arr.length;i++){
+            sum = sum + arr[i];
+            }
+        document.write("Sum of the numbers in array: ",sum);
+        // for(i=1;i<=10;i++){
+        //     document.write("9 X ",i," = ",i*9,"<br/>");
+        // }
+        
+        // for(i=1;i<=5;i++){
+        //     document.write("Chiru","<br/>");
+        // }
+        // for(i=2;i<=9;i=i+2){
+        //     console.log(i+3);
+        //     document.write(i);
+        // }
+    </script>
+    
+</body>
+</html>
