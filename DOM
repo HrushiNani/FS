@@ -1,0 +1,107 @@
+DOM(Document Object Mode):
+-------------------------
+It is a programming interface in web development that allows us to interact and manipulate  the html documents
+When the webpage is loaded , the browser creates the DOM of webpage
+
+When a html file is loaded into the browser , the javascript cannot understand the html document directly
+
+DOM : is basically the representation of same html documents but in a tree like structure composed of objects
+
+HTML DOM it allows javascript to access and modify all the elements in a HTML document
+
+Keypoints:
+----------
+1)Structure : The DOM represents the structure of HTML document as tree , Each node in a tree represents the element , an attribute , text
+2)Manipulation: using JS , you can interact with elements(buttons , h , p) we can modify , add, remove elements and change styles
+3)Event Handling
+
+
+
+What is the Document Object Model (DOM) - IONOS
+
+ 
+
+<html>
+
+          <head>
+
+                  <title> MRU </title>
+
+          </head>
+
+          <body>
+
+                  <h1> I am Hrushi </h1>
+
+          </body>
+
+</html
+
+ 
+
+In DOM, all html elements are defined objs.
+
+Property: is a value that you can set to the objects
+
+Method: an action   
+
+Methods of DOM:
+
+Getting Element
+
+1.    Getting an element by id
+
+2.    Getting an element by class
+--returns all elements having the same class name
+--return in the form of html collection object
+
+3.    Getting an element by tag name
+
+4.    Getting an element by query selector
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .a{
+            color: greenyellow;
+        }
+        .b{
+            color: blue;
+        }
+        .c{
+            color: red;
+        }
+    </style>
+<body>
+    <h1 class="b">Hrushi</h1>
+    <h1 class="b">Sunny</h1>
+    <h2 class="a">Kim Jong Un</h2>
+    <h1 class="c">Trump</h1>
+    <h1 class="a">Bobby</h1>
+    <h1 class="c">Abraham Lincoln</h1>
+    <h1 class="b">Putin</h1>
+</body>
+<script>
+    /*let x=document.getElementById("a")
+    console.log(x)*/
+    // let x=document.getElementsByClassName('a')
+    // console.log(x)
+    let x = document.getElementsByTagName('h1')
+    console.log(x)
+
+    for(i=0;i<x.length;i++){
+        console.log(x[i])
+    }
+</script>
+  
+</html>
