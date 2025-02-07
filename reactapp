@@ -1,0 +1,34 @@
+Greeting.js:
+-----------
+import React from "react";
+
+function Greeting({isLoggedIn}){
+    if(isLoggedIn){
+        return<h1>Welcome!</h1> 
+    }else{
+        return<h1>Please Login</h1>
+    }
+}
+export default Greeting;
+
+App.js:
+-------
+import React from "react";
+import Greeting from "./Greeting";
+
+function App(){
+  const isLoggedIn = true;
+  return(
+    <div className="App">
+      <Greeting isLoggedIn={isLoggedIn}/>
+    </div>
+  )
+}
+export default App;
+
+App.css:
+--------
+.App {
+  text-align: center;
+  color: red;
+  background-color: beige;
