@@ -1,0 +1,81 @@
+ProfileCard.js:
+-------------
+import React from "react";
+
+const ProfileCard = ({ name, greeting, imageSrc }) => (
+  <div className="profile-card">
+    
+    <img src={imageSrc} alt={name} />
+    <h2>{name}</h2>
+    <p>{greeting}</p>
+  </div>
+);
+
+export default ProfileCard
+
+App.js:
+------
+import React from "react";
+import ProfileCard from "./Components/ProfileCard";
+import "./App.css";
+
+const App = () => {
+  return (
+    <div className="app">
+            <h1 className="title">User Profiles</h1>
+            <div className="profile-container">
+      <ProfileCard name="Hrushi" greeting="Hello there!" imageSrc="https://qph.cf2.quoracdn.net/main-qimg-8ceee0d08d38e7603a4fc7e5b4321ac6-lq" />
+      <ProfileCard name="Sunny" greeting="Good to see you!" imageSrc="https://static9.depositphotos.com/1085342/1095/i/950/depositphotos_10957391-stock-photo-serious-nerdy-guy.jpg" />
+      <ProfileCard name="XYZ" greeting="Welcome back!" imageSrc="https://i.pinimg.com/474x/94/aa/e5/94aae55752cdf198fcecaaa11fe1037c.jpg" />
+    </div>
+    </div>
+  );
+};
+
+export default App;
+
+App.css:
+-------
+.app {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.profile-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.profile-card p {
+  font-size: 14px;
+  color: #555;
+}
