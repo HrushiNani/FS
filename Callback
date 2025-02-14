@@ -1,0 +1,83 @@
+React Reducer():
+---------------
+A Reducer is a function that helps to update (like score , a list) base don action we take
+
+1.Current State : The current value of a state
+2.Action : add or remove an item
+
+Example:
+--------
+import React, { useReducer } from "react";
+
+const appleImage = "https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg";
+
+function appleReducer(state, action) {
+  switch (action.type) {
+    case "ADD_APPLE":
+      return state + 1;
+    case "EAT_APPLE":
+      return state > 0 ? state - 1 : 0;
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(appleReducer, 3);
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Apple Counter</h1>
+      <p>Number of Apples: {state}</p>
+
+      <button onClick={() => dispatch({ type: "ADD_APPLE" })}>ADD APPLE</button>
+      <button onClick={() => dispatch({ type: "EAT_APPLE" })}>EAT APPLE</button>
+
+      <div style={{ display: "flex", flexWrap: "wrap", marginTop: "20px" }}>
+        {Array.from({ length: state }).map((_, index) => (
+          <img
+            key={index}
+            src={appleImage}
+            alt="Apple"
+            style={{ width: "50px", height: "50px", margin: "5px" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+Callback in React:
+------------------
+Child.js:
+=========
+import React from 'react';
+const Child=({changeMessage})=>{
+    return(
+        <button onClick={changeMessage}>Change Message</button>
+    );
+}
+export default Child;
+App.js
+======
+import React, {useState} from 'react';
+import Child from './Components/Child'
+
+const Parent=()=>{
+  const[message,setMessage]=useState('Hello World')
+
+  const changeMessage=()=>{
+    setMessage("Clicked the button");
+  };
+
+  return(
+    <div>
+      <h1>{message}</h1>
+      <Child changeMessage={changeMessage}/>
+    </div>
+  )
+}
+
+export default Parent;
